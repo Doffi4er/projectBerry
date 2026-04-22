@@ -1,382 +1,110 @@
 <!DOCTYPE html>
-<html lang="uk">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strawberry Drip</title>
-    <style>
-        /* Основні налаштування */
-        :root {
-            --primary-pink: #ff4d6d;
-            --dark-pink: #c9184a;
-            --bg-light: #fff0f3;
-            --text-dark: #2b2d42;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Шапка сайту */
-        header {
-            background: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-pink);
-        }
-
-        aside a {
-            margin-left: 10px;
-            text-decoration: none;
-            background: var(--primary-pink);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-
-        aside a:hover {
-            background: var(--dark-pink);
-        }
-
-        /* Головний блок (Hero Section) */
-        #home {
-            height: 70vh;
-            background: linear-gradient(rgba(255, 77, 109, 0.2), rgba(255, 77, 109, 0.2)),
-                url('https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=2070') center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            color: white;
-        }
-
-        #home h1 {
-            font-size: 4rem;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            margin-bottom: 10px;
-        }
-
-        #home p {
-            font-size: 1.2rem;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 5px 20px;
-            border-radius: 10px;
-        }
-
-        #home a {
-            margin-top: 25px;
-            padding: 15px 40px;
-            background: var(--primary-pink);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-
-        #home a:hover {
-            transform: scale(1.05);
-            background: var(--dark-pink);
-        }
-
-        /* Секції */
-        section {
-            padding: 80px 10%;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--dark-pink);
-        }
-
-        /* Сітка товарів */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .product-card {
-            position: relative;
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 15px;
-        }
-
-        .badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--dark-pink);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            z-index: 1;
-        }
-
-        .price {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--primary-pink);
-            margin: 10px 0;
-        }
-
-        button {
-            background: var(--primary-pink);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: var(--dark-pink);
-        }
-
-        /* Як ми працюємо */
-        #process ol {
-            display: flex;
-            justify-content: space-around;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            max-width: 250px;
-            padding: 20px;
-        }
-
-        /* Контакти */
-        form {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: var(--primary-pink);
-        }
-
-        /* Підвал */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            padding: 50px 10%;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-            }
-
-            nav {
-                margin: 15px 0;
-            }
-
-            #home h1 {
-                font-size: 2.5rem;
-            }
-
-            footer {
-                flex-direction: column;
-                text-align: center;
-                gap: 30px;
-            }
-
-            #process ol {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
 </head>
-
 <body>
     <header>
         <h2>Strawberry Drip</h2>
+
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#products">Products</a>
             <a href="#contact">Contact</a>
         </nav>
+
         <aside>
-            <a href="https://t.me/Absolut_an" target="_blank">Telegram</a>
-            <a href="https://www.youtube.com/@Doffy4ok" target="_blank">YouTube</a>
+            <a href="https://t.me/Absolut_an" target="_blank">TG</a>
+            <a href="https://www.youtube.com/@Doffy4ok" target="_blank">YT</a>
         </aside>
     </header>
 
+    <!-- HOME -->
     <section id="home">
         <h1>Strawberry Drip</h1>
         <p>Солодкий подарунок для будь-якого настрою</p>
-        <a href="#products">Замовити зараз</a>
+        <a href="#products">Order Now</a>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
         <h2>Про нас</h2>
-        <p style="max-width: 800px; margin: 0 auto;">
-            Ми створюємо не просто десерти, а моменти радості. Використовуємо тільки найсвіжішу полуницю
-            та справжній бельгійський шоколад. Кожен набір виготовляється вручну безпосередньо перед доставкою.
+        <p>
+            В 1964 году Лорейн Лортеус из Chicago окунула клубнику в шоколад —
+            так появился популярный десерт.
         </p>
     </section>
 
+    <!-- PRODUCTS -->
     <section id="products">
         <h2>Наші десерти</h2>
-        <div class="product-grid">
-            <article class="product-card">
-                <div class="badge">Бестселер</div>
-                <img src="https://i.pinimg.com/1200x/56/29/e4/5629e41c3e4f61be79b90b83d603733f.jpg"
-                    alt="полуничний мікс">
-                <h3>Полуничний мікс</h3>
-                <p>Класичне поєднання молочного та білого шоколаду.</p>
-                <p class="price">450 грн</p>
-                <button onclick="alert('Додано в кошик!')">До кошика</button>
-            </article>
 
-            <article class="product-card">
-                <img src="https://i.pinimg.com/1200x/20/71/6a/20716a50618063364f34426543039d91.jpg"
-                    alt="шоколадний вибух">
-                <h3>Шоколадний вибух</h3>
-                <p>Чорний бельгійський шоколад з горіховою крихтою.</p>
-                <p class="price">520 грн</p>
-                <button onclick="alert('Додано в кошик!')">До кошика</button>
-            </article>
-
-            <article class="product-card">
-                <div class="badge">Новинка</div>
-                <img src="https://i.pinimg.com/1200x/6d/2c/86/6d2c86e2d93e9619623e618485295c52.jpg" alt="ніжний кокос">
-                <h3>Ніжний кокос</h3>
-                <p>Полуниця у білому шоколаді з кокосовою стружкою.</p>
-                <p class="price">480 грн</p>
-                <button onclick="alert('Додано в кошик!')">До кошика</button>
-            </article>
-
-            <article class="product-card">
-                <img src="https://i.pinimg.com/1200x/bc/6d/a0/bc6da04e769641477484e56598c09a8a.jpg" alt="набір XL">
-                <h3>Набір "Family Pack"</h3>
-                <p>Велика коробка (24 шт) для особливих подій.</p>
-                <p class="price">1200 грн</p>
-                <button onclick="alert('Додано в кошик!')">До кошика</button>
-            </article>
-        </div>
+        <ul>
+            <li>
+                <article>
+                    <img src="https://i.pinimg.com/1200x/56/29/e4/5629e41c3e4f61be79b90b83d603733f.jpg" width="300"
+                        alt="полуничний мікс">
+                    <h3>Полуничний мікс</h3>
+                    <p>Полуниця в шоколаді</p>
+                    <p>450 грн</p>
+                    <button onclick="alert('Додано в кошик!')">Замовити</button>
+                </article>
+            </li>
+        </ul>
     </section>
 
+    <!-- PROCESS -->
     <section id="process">
         <h2>Як ми працюємо</h2>
+
         <ol>
-            <li class="step">
+            <li>
                 <h3>Оберіть</h3>
-                <p>Оберіть свій ідеальний десерт у каталозі</p>
+                <p>Перегляньте каталог та оберіть десерт</p>
             </li>
-            <li class="step">
+
+            <li>
                 <h3>Замовте</h3>
-                <p>Ми зв’яжемося для уточнення деталей</p>
+                <p>Оформіть замовлення</p>
             </li>
-            <li class="step">
+
+            <li>
                 <h3>Отримайте</h3>
-                <p>Швидка доставка по місту Dnipro</p>
+                <p>Доставка протягом години</p>
             </li>
         </ol>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
         <h2>Зв’яжіться з нами</h2>
+
         <form>
-            <input type="text" placeholder="Ваше ім’я" required>
-            <input type="email" placeholder="Ваш Email" required>
-            <textarea placeholder="Ваше повідомлення" rows="5" required></textarea>
-            <button type="submit">Відправити замовлення</button>
+            <input type="text" name="name" placeholder="Ім’я" required><br><br>
+            <input type="email" name="email" placeholder="Email" required><br><br>
+            <textarea name="message" placeholder="Повідомлення" required></textarea><br><br>
+            <button type="submit">Відправити</button>
         </form>
     </section>
 
+    <!-- FOOTER -->
     <footer>
+
         <div>
             <h3>Strawberry Drip</h3>
             <p>Смачні десерти з полуниці в шоколаді</p>
         </div>
+
         <div>
             <h4>Контакти</h4>
             <p>Телефон: +380980143312</p>
             <p>Email: example@gmail.com</p>
             <p>Dnipro</p>
         </div>
+
     </footer>
 </body>
-
 </html>
