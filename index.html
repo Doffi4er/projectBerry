@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strawberry Drip</title>
-</head>
-
-<body>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -171,83 +168,109 @@
             color: var(--text-dim);
         }
     </style>
-    </head>
+</head>
 
-    <body>
+<body>
+    <header>
+        <div class="logo">Strawberry Drip</div>
+        <nav>
+            <a href="#home">Головна</a>
+            <a href="#about">Про нас</a>
+            <a href="#process">Процес</a>
+            <a href="#products">Десерти</a>
+        </nav>
+        <div>
+            <a href="https://t.me/Absolut_an" target="_blank" style="color:white; text-decoration:none;">TG</a>
+            <a href="https://www.youtube.com/@Doffy4ok" target="_blank"
+                style="color:white; text-decoration:none;">YT</a>
+        </div>
+    </header>
 
-        <header>
-            <div class="logo">Strawberry Drip</div>
-            <nav>
-                <a href="#home">Головна</a>
-                <a href="#about">Про нас</a>
-                <a href="#products">Десерти</a>
-                <a href="#contact">Контакти</a>
-            </nav>
-            <div class="social-links">
-                <a href="https://t.me/Absolut_an" target="_blank">TG</a>
-                <a href="https://www.youtube.com/@Doffy4ok" target="_blank">YT</a>
+    <section id="home">
+        <h1>Strawberry Drip</h1>
+        <p style="color: var(--text-dim); max-width: 600px;">Ексклюзивна полуниця в шоколаді, створена дарувати насолоду
+            та незабутні емоції.</p>
+        <a href="#products" class="btn-main" style="margin-top: 25px;">Відкрити каталог</a>
+    </section>
+
+    <section id="about">
+        <div class="about-image"></div>
+        <div class="about-content">
+            <h2 style="color: var(--accent-color);">Наша історія</h2>
+            <p>У 1964 році Лорейн Лортеус з Чикаго вперше занурила свіжу полуницю в розтоплений шоколад. Цей момент
+                змінив світ десертів назавжди.</p>
+            <p style="color: var(--text-dim);">Ми в <strong>Strawberry Drip</strong> продовжуємо цю солодку традицію в
+                Дніпрі, використовуючи лише добірні ягоди та преміальний бельгійський шоколад.</p>
+        </div>
+    </section>
+
+    <section id="process">
+        <h2 style="text-align: center;">Як ми працюємо</h2>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <h3>Оберіть</h3>
+                <p style="color: var(--text-dim);">Перегляньте наш каталог та оберіть свій ідеальний набір.</p>
             </div>
-        </header>
-
-        <section id="home">
-            <h1>Strawberry Drip</h1>
-            <p>Солодкий подарунок для будь-якого настрою</p>
-            <a href="#products" class="btn-order">Замовити зараз</a>
-        </section>
-
-        <section id="about" style="text-align: center; padding: 60px 20%;">
-            <h2>Про нас</h2>
-            <p style="color: var(--text-dim);">
-                В 1964 році Лорейн Лортеус з Чикаго занурила полуницю в шоколад —
-                так з'явився цей легендарний десерт. Ми продовжуємо цю традицію з любов'ю.
-            </p>
-        </section>
-
-        <section id="products">
-            <h2 style="text-align: center; margin-bottom: 40px;">Наші десерти</h2>
-            <ul class="product-grid">
-                <li class="product-card">
-                    <img src="https://i.pinimg.com/1200x/56/29/e4/5629e41c3e4f61be79b90b83d603733f.jpg" alt="мікс">
-                    <h3>Полуничний мікс</h3>
-                    <p class="price">450 грн</p>
-                    <button class="buy-btn" onclick="alert('Додано!')">Замовити</button>
-                </li>
-                <li class="product-card">
-                    <img src="https://i.pinimg.com/1200x/6c/18/17/6c181705a0a78f27be54dc4e7598a403.jpg" alt="багато">
-                    <h3>Шоколадний бум</h3>
-                    <p class="price">550 грн</p>
-                    <button class="buy-btn" onclick="alert('Додано!')">Замовити</button>
-                </li>
-                <li class="product-card">
-                    <img src="https://i.pinimg.com/1200x/99/7b/39/997b39b52fbbdf6c6960517747cc8d7a.jpg" alt="подарунок">
-                    <h3>Подарунковий набір</h3>
-                    <p class="price">500 грн</p>
-                    <button class="buy-btn" onclick="alert('Додано!')">Замовити</button>
-                </li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Маєте запитання?</h2>
-            <p>Залиште повідомлення, і ми зв'яжемося з вами</p>
-            <form>
-                <input type="text" placeholder="Ваше ім’я" required><br>
-                <input type="email" placeholder="Ваш Email" required><br>
-                <textarea placeholder="Повідомлення" rows="4"></textarea><br>
-                <button type="submit" class="btn-order" style="border:none; cursor:pointer;">Відправити</button>
-            </form>
-        </section>
-
-        <footer>
-            <div>
-                <h3>Strawberry Drip</h3>
-                <p>Смачні десерти в шоколаді</p>
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <h3>Замовте</h3>
+                <p style="color: var(--text-dim);">Залиште заявку на сайті або напишіть нам у Telegram.</p>
             </div>
-            <div>
-                <h4>Контакти</h4>
-                <p>Dnipro | +380980143312</p>
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <h3>Насолоджуйтесь</h3>
+                <p style="color: var(--text-dim);">Швидка доставка по місту протягом однієї години.</p>
             </div>
-        </footer>
-    </body>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 style="text-align: center; margin-bottom: 50px;">Наші десерти</h2>
+        <ul class="product-grid">
+            <li class="product-card">
+                <img src="https://i.pinimg.com/1200x/56/29/e4/5629e41c3e4f61be79b90b83d603733f.jpg" alt="мікс">
+                <h3>Полуничний мікс</h3>
+                <p class="price">450 грн</p>
+                <button class="buy-btn" onclick="alert('Додано в кошик!')">Додати у кошик</button>
+            </li>
+            <li class="product-card">
+                <img src="https://i.pinimg.com/1200x/6c/18/17/6c181705a0a78f27be54dc4e7598a403.jpg" alt="багато">
+                <h3>Шоколадний вибух</h3>
+                <p class="price">550 грн</p>
+                <button class="buy-btn" onclick="alert('Додано в кошик!')">Додати у кошик</button>
+            </li>
+            <li class="product-card">
+                <img src="https://i.pinimg.com/1200x/99/7b/39/997b39b52fbbdf6c6960517747cc8d7a.jpg" alt="набір">
+                <h3>Подарунковий Box</h3>
+                <p class="price">500 грн</p>
+                <button class="buy-btn" onclick="alert('Додано в кошик!')">Додати у кошик</button>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Маєте запитання?</h2>
+        <p>Залиште повідомлення, і ми зв'яжемося з вами</p>
+        <form>
+            <input type="text" placeholder="Ваше ім’я" required><br>
+            <input type="email" placeholder="Ваш Email" required><br>
+            <textarea placeholder="Повідомлення" rows="4"></textarea><br>
+            <button type="submit" class="btn-order" style="border:none; cursor:pointer;">Відправити</button>
+        </form>
+    </section>
+
+    <footer>
+        <div>
+            <div class="logo" style="margin-bottom: 10px;">Strawberry Drip</div>
+            <p>Смак, що залишається в серці.</p>
+        </div>
+        <div>
+            <h4>Контакти</h4>
+            <p>Дніпро, Україна</p>
+            <p>+380980143312</p>
+        </div>
+    </footer>
+</body>
 
 </html>
