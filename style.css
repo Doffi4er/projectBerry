@@ -168,3 +168,11 @@ footer {
 .about{
     text-align: center;
 }
+
+.process{
+    text-align: center;
+}
+
+.process-step{
+    color: var(--accent-color);
+}
