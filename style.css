@@ -69,6 +69,7 @@ nav a:hover {
 #home h1 {
     font-size: 4rem;
     margin-bottom: 10px;
+    animation: heroAppear 1s ease-out forwards;
 }
 
 .btn-order {
@@ -338,4 +339,28 @@ footer {
     color: #ffffff;
     border: none;
     cursor: pointer;
+}
+
+.about-content h2 {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.about-content h2::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #e91e63;
+}
+
+@keyframes heroAppear{
+  0%{opacity: 0;
+  transform: translateY(30px);}
+
+  100%{opacity: 1;
+  transform: translateY(0);}
 }
