@@ -168,6 +168,7 @@ footer {
 
 .about {
   text-align: center;
+  padding: 0 15px;
 }
 
 .process {
@@ -383,15 +384,105 @@ footer {
   }
 }
 
+/* BURGER BUTTON (base state — hidden on desktop) */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--text-main);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.is-active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.is-active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
 /* Small: 576px - 767px */
 @media (max-width: 767px) {
   .container {
     max-width: 540px;
   }
 
-  .nav-links{
-    display: none;
+  .burger {
+    display: flex;
   }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    max-width: 75vw;
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 30px;
+    gap: 20px;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 1001;
+  }
+
+  .nav-links.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links.is-open a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links.is-open a:nth-child(1) { transition-delay: 0s; }
+  .nav-links.is-open a:nth-child(2) { transition-delay: 0.05s; }
+  .nav-links.is-open a:nth-child(3) { transition-delay: 0.1s; }
+  .nav-links.is-open a:nth-child(4) { transition-delay: 0.15s; }
+}
+
+/* MENU OVERLAY */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 50; /* між шапкою (z-index: 100) і контентом (z-index: авто/0) */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Extra small: 0px (320px) - 575px */

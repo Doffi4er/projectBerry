@@ -31,7 +31,7 @@
 
     <header>
         <div class="logo">Strawberry Drip</div>
-        <nav class="nav-links">
+        <nav class="nav-links" data-menu>
             <a href="#home">Головна</a>
             <a href="#about">Про нас</a>
             <a href="#process">Процес</a>
@@ -44,7 +44,14 @@
                     style="width: 39px; height: 39px;"></a>
         </div>
         <button class="btn-open button-78" data-modal-open>Замовити</button>
+        <button class="burger" data-burger aria-label="Відкрити меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+
+    <div class="menu-overlay" data-menu-overlay></div>
 
     <section id="home">
         <h1 class="hero-title">Strawberry Drip</h1>
